@@ -32,7 +32,7 @@ const Stroke = keyframes({
 })
 
 const Base = (props: Props) => {
-    console.log(props)
+
     return (
         <div {...props}>
             <div id="main" className="main">

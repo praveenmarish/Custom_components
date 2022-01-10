@@ -21,12 +21,14 @@ const UiRoute = {
             path: 'loading',
             element: <Progress />
         }, {
-
             path: 'loadingCheckOk',
             element: <MultiDiv />
         }, {
             path: "switch",
             element: <StyledSwitch />
+        }, {
+            path: "/*",
+            element: <></>
         }
     ],
 };

@@ -1,5 +1,5 @@
 import { ButtonProps } from "@mui/material"
-import { height, styled } from "@mui/system"
+import { styled } from "@mui/system"
 
 const Base = (props: ButtonProps) => {
     return (
@@ -20,10 +20,10 @@ const Animation = styled(Base)({
         height: "40px",
     },
     "&:hover": {
-        animation: "progress 2s",
+        animation: "hover 2s",
         backgroundColor: "#71dfbe"
     },
-    "@keyframes progress": {
+    "@keyframes hover": {
         "from": {
             backgroundColor: "#2b2d2f"
         },
