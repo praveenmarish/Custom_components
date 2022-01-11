@@ -1,4 +1,6 @@
 import { styled, Switch } from "@mui/material";
+import { useDispatch } from "react-redux";
+import { dark, light } from "redux/slice";
 
 const MaterialUISwitch = styled(Switch)(({ theme }) => ({
     width: 80,
@@ -50,5 +52,14 @@ const MaterialUISwitch = styled(Switch)(({ theme }) => ({
 }));
 
 export const StyledSwitch = () => {
-    return (<MaterialUISwitch />)
+    const dispatch = useDispatch();
+    const handleChange = (event: React.ChangeEvent<HTMLInputElement>, checked: boolean) => {
+        console.log(checked)
+        if (checked) {
+            dispatch(dark())
+        } else {
+            dispatch(light())
+        }
+    }
+    return (<MaterialUISwitch onChange={handleChange} />)
 }

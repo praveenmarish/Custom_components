@@ -117,7 +117,7 @@ import { StyledSwitch } from './StyledSwitch';
 import React from 'react';
 
 
-const Tab = styled(TabUnstyled)({
+const Tab = styled(TabUnstyled)(({ theme }) => ({
     fontFamily: "sans-serif",
     color: "white",
     cursor: "pointer",
@@ -133,16 +133,16 @@ const Tab = styled(TabUnstyled)({
     justifyContent: "center",
 
     "&:hover": {
-        backgroundColor: "#808285",
+        backgroundColor: theme.palette.secondary.dark,
     },
 
     "&.Mui-selected": {
-        color: "#2b2d2f",
+        color: theme.palette.primary.main,
         outline: "none",
-        backgroundColor: "#ffff",
+        backgroundColor: theme.palette.primary.light,
         cursor: "not-allowed",
     }
-});
+}));
 
 const TabPanel = styled(TabPanelUnstyled)({
     width: "100%",
@@ -150,16 +150,16 @@ const TabPanel = styled(TabPanelUnstyled)({
     fontSize: "0.875rem",
 });
 
-const TabsList = styled(TabsListUnstyled)({
+const TabsList = styled(TabsListUnstyled)(({ theme }) => ({
     minWidth: "320px",
-    backgroundColor: "#2b2d2f",
+    backgroundColor: theme.palette.primary.dark,
     borderRadius: "8px",
     marginBottom: "16px",
     display: "flex",
     alignItems: "center",
     justifyContent: "center",
     alignContent: "space-between"
-});
+}));
 
 
 const Base = ({ children }: Main.TabProps) => {
