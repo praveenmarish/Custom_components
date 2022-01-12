@@ -51,7 +51,6 @@ const Animation = styled(Base)({
     },
     "& .main": {
         backgroundColor: "#2b2d2f",
-        color: "#71dfbe",
         border: "none",
         borderRadius: "0.250em",
         fontWeight: "bold",

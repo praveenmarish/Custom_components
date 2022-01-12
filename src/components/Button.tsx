@@ -7,10 +7,10 @@ const Base = (props: ButtonProps) => {
     )
 }
 
-const Animation = styled(Base)({
+const Animation = styled(Base)(({ theme }) => ({
     "&": {
-        backgroundColor: "#2b2d2f",
-        color: "#71dfbe",
+        backgroundColor: theme.palette.primary.dark,
+        color: theme.palette.secondary.dark,
         border: "none",
         borderRadius: "0.250em",
         fontWeight: "bold",
@@ -18,20 +18,13 @@ const Animation = styled(Base)({
         padding: 0,
         width: "125px",
         height: "40px",
+        transition: "width 2s, background-color 2s"
     },
     "&:hover": {
-        animation: "hover 2s",
-        backgroundColor: "#71dfbe"
-    },
-    "@keyframes hover": {
-        "from": {
-            backgroundColor: "#2b2d2f"
-        },
-        "to": {
-            backgroundColor: "#71dfbe"
-        }
+        width: "50px",
+        backgroundColor: theme.palette.secondary.dark
     }
-});
+}));
 
 export const AnimButton = () => {
     return (<Animation />)

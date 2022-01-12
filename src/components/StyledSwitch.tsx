@@ -1,6 +1,6 @@
 import { styled, Switch } from "@mui/material";
-import { useDispatch } from "react-redux";
-import { dark, light } from "redux/slice";
+import { useDispatch, useSelector } from "react-redux";
+import { dark, light, selectTheme } from "redux/slice";
 
 const MaterialUISwitch = styled(Switch)(({ theme }) => ({
     width: 80,
@@ -22,12 +22,12 @@ const MaterialUISwitch = styled(Switch)(({ theme }) => ({
             },
             '& + .MuiSwitch-track': {
                 opacity: 1,
-                backgroundColor: theme.palette.mode === 'dark' ? '#8796A5' : '#aab4be',
+                backgroundColor: theme.palette.secondary.light
             },
         },
     },
     '& .MuiSwitch-thumb': {
-        backgroundColor: theme.palette.mode === 'dark' ? '#003892' : '#001e3c',
+        backgroundColor: theme.palette.primary.main,
         width: 25,
         height: 25,
         '&:before': {
@@ -46,13 +46,14 @@ const MaterialUISwitch = styled(Switch)(({ theme }) => ({
     },
     '& .MuiSwitch-track': {
         opacity: 1,
-        backgroundColor: theme.palette.mode === 'dark' ? '#8796A5' : '#aab4be',
+        backgroundColor: theme.palette.secondary.light,
         borderRadius: 20,
     },
 }));
 
 export const StyledSwitch = () => {
     const dispatch = useDispatch();
+    const themeSetter = useSelector(selectTheme)
     const handleChange = (event: React.ChangeEvent<HTMLInputElement>, checked: boolean) => {
         console.log(checked)
         if (checked) {
@@ -61,5 +62,5 @@ export const StyledSwitch = () => {
             dispatch(light())
         }
     }
-    return (<MaterialUISwitch onChange={handleChange} />)
+    return (<MaterialUISwitch onChange={handleChange} defaultChecked={themeSetter === "dark" ? true : false} />)
 }
