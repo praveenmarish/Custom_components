@@ -115,6 +115,7 @@ import { Progress } from './Progress';
 import { MultiDiv } from './multipleDiv';
 import { StyledSwitch } from './StyledSwitch';
 import React from 'react';
+import { BlurEffect } from './BlurEffect';
 
 
 const Tab = styled(TabUnstyled)(({ theme }) => ({
@@ -172,7 +173,8 @@ const ComponentMap: { [key: string]: JSX.Element } = {
     "button": <AnimButton />,
     "loading": <Progress />,
     "loadandok": <MultiDiv />,
-    "switch": <StyledSwitch />
+    "switch": <StyledSwitch />,
+    "blur": <BlurEffect />
 }
 
 const Route = (name: string) => {
@@ -197,11 +199,13 @@ const StyledTabs = () => {
                 <Tab>Loading</Tab>
                 <Tab>Loading and ok</Tab>
                 <Tab>Switch</Tab>
+                <Tab>Blur effect</Tab>
             </TabsList>
             <TabPanel value={0}>{Route("button")}</TabPanel>
             <TabPanel value={1}>{Route("loading")}</TabPanel>
             <TabPanel value={2}>{Route("loadandok")}</TabPanel>
             <TabPanel value={3}>{Route("switch")}</TabPanel>
+            <TabPanel value={4}>{Route("blur")}</TabPanel>
         </TabsUnstyled>
     );
 }
