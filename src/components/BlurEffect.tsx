@@ -27,8 +27,8 @@ const BlurComponent = styled(Base)(({ theme }) => ({
         animation: "expand 2s",
         animationFillMode: "forwards",
         boxShadow: "0 10px 20px rgba(0, 0, 0, 0.5)",
-        //background: theme.palette.primary.dark,
-        //opacity: 0.6
+        background: theme.palette.primary.dark,
+        opacity: 0.6
     },
     "& .container::before": {
         content: "''",
