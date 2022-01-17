@@ -155,7 +155,7 @@ const TabsList = styled(TabsListUnstyled)(({ theme }) => ({
     minWidth: "320px",
     backgroundColor: theme.palette.primary.dark,
     borderRadius: "8px",
-    marginBottom: "16px",
+    margin: "16px",
     display: "flex",
     alignItems: "center",
     justifyContent: "center",
@@ -164,7 +164,7 @@ const TabsList = styled(TabsListUnstyled)(({ theme }) => ({
 
 
 const Base = ({ children }: Main.TabProps) => {
-    return <div style={{ position: "absolute", top: "50%", left: "50%", transform: "translate(-50%, -50%)" }}>
+    return <div style={{ display: "flex", justifyContent: "center" }}>
         {children}
     </div>
 }

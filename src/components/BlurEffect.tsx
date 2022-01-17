@@ -12,7 +12,7 @@ const Base = (props: Props) => {
 
 const BlurComponent = styled(Base)(({ theme }) => ({
     "&": {
-        height: "80vh",
+        height: "70vh",
         width: "90vw",
         position: "relative",
         background: "center",
