@@ -16,7 +16,7 @@ const LightPalette = (): PaletteOptions => ({
 });
 
 const LightTypo = (): TypographyOptions => ({
-  fontFamily: 'fantasy',
+  fontFamily: 'sans-serif',
 });
 
 const LightComponents = (): Components => ({

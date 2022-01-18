@@ -1,6 +1,7 @@
 import { ButtonProps } from "@mui/material"
 import { styled } from "@mui/system"
 import GoogleLogin, { GoogleLogout } from "react-google-login";
+import Dialogs from "./login";
 // import {
 //     getAuth,
 //     signInWithPopup,
@@ -46,16 +47,17 @@ export const AnimButton = () => {
 
     return (<div>
         <Animation />
-        <GoogleLogin clientId="1089055708712-p4ktbmfbeus3r6erv3gph5vnae4tcog9.apps.googleusercontent.com"
+        {/* <GoogleLogin clientId="964222035550-l18h6rfmb1si65171shall8u3gdctt6b.apps.googleusercontent.com"
             buttonText="Login"
             onSuccess={onSuccess}
             onFailure={responseGoogle}
             isSignedIn={true}
-        />
+        /> */}
         {/* <GoogleLogout
             clientId="964222035550-l18h6rfmb1si65171shall8u3gdctt6b.apps.googleusercontent.com"
             buttonText="Logout"
             onLogoutSuccess={logout}
         ></GoogleLogout> */}
+        <Dialogs />
     </div>)
 }
